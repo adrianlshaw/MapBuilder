@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Builder!</string>
+    <string name="app_name">MapBuilder</string>
+    <string name="builder_start_btn">Start</string>
+    <string name="builder_stop_btn">Stop</string>
+    <string name="builder_console_title">Console</string>
+    <string name="builder_console_addplace_button">Add POI</string>
+    <string name="dialog_buildingname_box">BuildingName</string>
+    <string name="dialog_code_box">Code</string>
+    <string name="dialog_deptname_box">Department</string>
+    <string name="builder_button">Add Place</string>
+    <string name="builder_cancel_button">Cancel</string>
+    <string name="builder_force_add">Force Add Point</string>
+    <string name="dialog_photo">Photo</string>
+</resources>

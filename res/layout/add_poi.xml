@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:padding="2mm"
+  android:layout_height="fill_parent" android:orientation="vertical" android:id="@+id/dialog_photo_btn">
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView1" android:text="@string/dialog_buildingname_box" android:layout_gravity="left"></TextView>
+    <EditText android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="" android:layout_gravity="center_horizontal" android:id="@+id/buildingNameBox"></EditText>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView2" android:text="@string/dialog_code_box" android:layout_gravity="left"></TextView>
+    <EditText android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="" android:layout_gravity="center_horizontal" android:id="@+id/codeBox"></EditText>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView3" android:text="@string/dialog_deptname_box" android:layout_gravity="left"></TextView>
+    <EditText android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="" android:layout_gravity="center_horizontal" android:id="@+id/departmentBox"></EditText>
+    <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout1" android:paddingTop="2mm" android:layout_width="wrap_content" android:layout_gravity="center">
+        <Button android:layout_height="wrap_content" android:text="@string/builder_button" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:id="@+id/dialog_addpoi_button"></Button>
+        <Button android:layout_width="wrap_content" android:id="@+id/button1" android:layout_height="wrap_content" android:text="@string/dialog_photo"></Button>
+        <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/builder_cancel_button" android:id="@+id/dialog_cancel_button"></Button>
+    </LinearLayout>
+</LinearLayout>
