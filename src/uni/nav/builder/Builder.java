@@ -36,13 +36,20 @@ import android.widget.Toast;
 
 public class Builder extends Activity implements LocationListener, Listener {
     
+	/*
+	 * Some UI components
+	 */
 	private TextView text, nodeCount;
 	private LocationManager manager;
 	private ProgressBar progressBar;
 	private TextView console;
 	private Button startButton, stopButton, addPlaceButton;
-	public static int MAX_NODES = 300;
+	public static int MAX_NODES = 300; // the maximum number of nodes
+					   // to be recorded.
 	
+	/*
+	 * Some default values in metres.
+	 */
 	private static int MIN_DISTANCE = 5;
 	private static int MAX_DISTANCE = 30;
 	private static int CONNECT_RANGE = 6;
@@ -59,7 +66,11 @@ public class Builder extends Activity implements LocationListener, Listener {
         fetchPreferences();
         setupViews();
     }
-    
+	/*
+	 * Retrieves application preferences from the SharedPreferences
+	 * file on the filesystem.   
+	 */
+
     public void fetchPreferences(){
     	SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
     	
@@ -74,6 +85,9 @@ public class Builder extends Activity implements LocationListener, Listener {
     	Log.i("NavMap", "Preference RMinMax:"+range+mindistance+maxnodes);
     }
     
+	/*
+	 * This sets up the graphical interface and its listeners.
+	 */
     public void setupViews(){
         text = (TextView) findViewById(R.id.builder_lastlocation);
         progressBar = (ProgressBar) findViewById(R.id.builder_progress_bar);
@@ -92,6 +106,7 @@ public class Builder extends Activity implements LocationListener, Listener {
         stopButton.setEnabled(false);
         
         Button forceAddPoint = (Button) findViewById(R.id.forceAddPoint);
+	// Force Add Point button
         forceAddPoint.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -102,7 +117,7 @@ public class Builder extends Activity implements LocationListener, Listener {
 				}
 			}
         });
-        
+        // Start Button
         startButton.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -112,6 +127,7 @@ public class Builder extends Activity implements LocationListener, Listener {
 			}
 		});       
         final Context context = this;
+	// Add Place Button
         addPlaceButton.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -122,6 +138,7 @@ public class Builder extends Activity implements LocationListener, Listener {
 				}							
 			}
 		});
+	// Stop Button
         stopButton.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -164,7 +181,13 @@ public class Builder extends Activity implements LocationListener, Listener {
     private boolean firstTime = true;
     private int locationCount = 0;
     boolean preciseEnough = false;
-    
+	
+	/*
+	 * GPS takes a while to triangulate your location, so it is necessary to ignore
+	 * the first several readings, which are typically broad and inaccurate. This is
+	 * why there is a variable called preciseEnough. Once this is true, it is acceptable
+	 * to accept readings for the rest of the Activity lifetime.
+	 */    
 	@Override
 	public void onLocationChanged(Location location) {
 		
@@ -183,18 +206,23 @@ public class Builder extends Activity implements LocationListener, Listener {
 			}
 			updateConsoleView(location);
 			
+			/*
+			 * If there are more nodes than our set limit, then stop the
+			 * recording immediately and disable the stop button.
+			 */
 			if(nodeArray.size()>=MAX_NODES){
 				stopLocationUpdates();
 				firstTime = true;
 				startButton.setEnabled(true);
 				stopButton.setEnabled(false);
-				writeToXML();
+				writeToXML();	// begin writing to disk
 				progressBar.setVisibility(ProgressBar.INVISIBLE);
 				return ;
 			}
 			
 			float distance = location.distanceTo(lastLocation);
 				
+			/* If still within recording limits, then plot the latest node */
 			if(distance>MIN_DISTANCE && distance<MAX_DISTANCE){
 				Node node = new Node(location);
 				nodeArray.add(node);
@@ -273,6 +301,13 @@ public class Builder extends Activity implements LocationListener, Listener {
 		write.start();
 		
 	}
+
+
+	/*
+	 * Writing the recorded nodes to disk may take a while, and should be put in 
+	 * a concurrent thread, so that it does not affect the responsiveness of the 
+	 * system thread that handles the UI. 
+	 */
 	class WriterThread extends Thread{
 		
 		private Handler handler = new Handler(){
@@ -308,7 +343,7 @@ public class Builder extends Activity implements LocationListener, Listener {
 			increment();
 			WriteKML kmlWriter = new WriteKML(nodeArray);
 			increment();			
-            handler.sendEmptyMessage(0);
+		        handler.sendEmptyMessage(0);
 		}
 		
 		public void increment(){
@@ -332,7 +367,7 @@ public class Builder extends Activity implements LocationListener, Listener {
 			in = new ObjectInputStream(fis);
 			nodesSoFar = (ArrayList<ArrayList<Node>>) in.readObject();
 			in.close();
-			writeCacheFile();
+			nodewriteCacheFile();
 			
 		}
 		catch(ClassNotFoundException clex){
