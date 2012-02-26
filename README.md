@@ -12,5 +12,5 @@ Simply open the Android app, hop on your bike and cycle round each path. You may
     * 1.6 and above. GPS is mandatory.
 * What kind of screen size do you support?
     * In theory, any! It was designed with any screen size in mind. You can use it on a tablet, if you wish!
-
-
+* I want to try it out now!
+    * Download the APK binary above and copy it onto your Android phone. Remember to allow for third party apps in your security settings. This is very much like Beta software. It has only been tested by me. I've tried to make it robust, so if you find any bugs, please let me know!
