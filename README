@@ -1,4 +1,5 @@
-Hello!
+<html>
+<h1>Hello!</h1>
 
 MapBuilder is a tool for creating maps for Varsity (commercially known as BhamNav).
 The reason that the tool was created was to provide an easy way for people to plot their own maps for their universities.
@@ -7,3 +8,4 @@ Simply open the Android app, hop on your bike and cycle round each path. You may
 What version of Android do I need?
 
 1.6 and above :-)
+</html>
