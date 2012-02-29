@@ -6,7 +6,7 @@ MapBuilder is a tool for creating maps for Varsity (commercially known as BhamNa
 The reason that the tool was created was to provide an easy way for people to plot their own maps for their universities.
 Simply open the Android app, hop on your bike and cycle round each path. You may do this by foot, but it can be very tiring, as I have found out!
 
-<img src="https://github.com/alshaw/MapBuilder/blob/master/res/drawable-hdpi/icon.png" alt="MapBuilder" />
+<img src="https://github.com/alshaw/MapBuilder/raw/master/res/drawable-hdpi/icon.png" alt="MapBuilder" />
 
 # Q&A
 
