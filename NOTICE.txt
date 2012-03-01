@@ -1,0 +1,10 @@
+ Apache MapBuilder
+      Copyright 2012 The Apache Software Foundation
+
+      This product includes software developed at
+      The Apache Software Foundation (http://www.apache.org/).
+
+To use this software you must also include a changelog of modifications and credit the original author by including his name:
+
+Original author: Mr Adrian Shaw (http://www.github.com/alshaw)
+Supervised by: Dr Thomas Chothia
