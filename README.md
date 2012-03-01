@@ -1,6 +1,8 @@
-# Introduction
+MapBuilder
+=========
 
----
+Introduction
+-------------
 
 MapBuilder is a tool for creating maps for Varsity (commercially known as BhamNav).
 The reason that the tool was created was to provide an easy way for people to plot their own maps for their universities.
@@ -8,8 +10,7 @@ Simply open the Android app, hop on your bike and cycle round each path. You may
 
 <img src="https://github.com/alshaw/MapBuilder/raw/master/res/drawable-hdpi/icon.png" alt="MapBuilder" />
 
-# Q&A
-
+Q&A
 ---
 
 * What version of Android do I need?
@@ -21,10 +22,18 @@ Simply open the Android app, hop on your bike and cycle round each path. You may
 * Where is the source for BhamNav?
     * It is being prepared for human consumption.
 
-# License
+Author
+------
+ * Adrian Shaw
+ * With special thanks to Dr Tom Chothia
 
----
+Copyright and License
+---------------------
 
-This project is under the Apache License 2.0
-For general use, please inspect the provided LICENSE file.
-Take careful note of the NOTICE file too.
+Copyright 2012 University of Birmingham
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
