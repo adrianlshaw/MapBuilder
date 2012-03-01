@@ -1,6 +1,6 @@
 # Introduction
 
-- - -
+---
 
 MapBuilder is a tool for creating maps for Varsity (commercially known as BhamNav).
 The reason that the tool was created was to provide an easy way for people to plot their own maps for their universities.
@@ -10,7 +10,7 @@ Simply open the Android app, hop on your bike and cycle round each path. You may
 
 # Q&A
 
-- - -
+---
 
 * What version of Android do I need?
     * 1.6 and above. GPS is mandatory.
@@ -20,3 +20,11 @@ Simply open the Android app, hop on your bike and cycle round each path. You may
     * Download the APK binary above and copy it onto your Android phone. Remember to allow for third party apps in your security settings. This is very much like Beta software. It has only been tested by me. I've tried to make it robust, so if you find any bugs, please let me know!
 * Where is the source for BhamNav?
     * It is being prepared for human consumption.
+
+# License
+
+---
+
+This project is under the Apache License 2.0
+For general use, please inspect the provided LICENSE file.
+Take careful note of the NOTICE file too.
